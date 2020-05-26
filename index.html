@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>苗玟的作品</title>
     <!-- <script src="https://cdn.bootcdn.net/ajax/libs/jquery/2.2.4/jquery.min.js"></script> -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/pdfh5.css" />
+    <link href="https://www.gjtool.cn/download/pdfh5.png" type="image/x-icon" rel="shortcut icon" />
     <style>
 
         *{
@@ -15,14 +18,62 @@
             height:100vh;
             overflow: hidden;
         }
+        #demo {
+            display: none;
+			/* height: 50%; */
+        }
     </style>
 </head>
 <body>
-    
-    <iframe src='https://www.gjtool.cn/pdfh5/pdf.html?file=https://miaowenwen.github.io/Miao.pdf' width='100%' height='100%' frameborder='1'></iframe>
+    <div id="app">
+        <div class="text-wrapper">
+            <div class="text part1">
+                <div>
+                    <span class="letter">
+                        <div class="character">L</div> <span></span>
+                    </span>
+                    <span class="letter">
+                        <div class="character">o</div> <span></span>
+                    </span>
+                    <span class="letter">
+                        <div class="character">a</div> <span></span>
+                    </span>
+                    <span class="letter">
+                        <div class="character">d</div> <span></span>
+                    </span>
+                    <span class="letter">
+                        <div class="character">i</div> <span></span>
+                    </span>
+                    <span class="letter">
+                        <div class="character">n</div> <span></span>
+                    </span>
+                    <span class="letter">
+                        <div class="character">g</div> <span></span>
+                    </span>
+                </div>
+            </div>
+            <div class="how-to"><span>正在加载中，请您耐心等待...</span></div>
+        </div>
+
+    </div>
+    <!-- <iframe src='https://www.gjtool.cn/pdfh5/pdf.html?file=https://miaowenwen.github.io/Miao.pdf' width='100%' height='100%' frameborder='1'></iframe> -->
+    <div id="demo"></div>
+    <script src="js/pdf.js"></script>
+    <script src="js/pdf.worker.js"></script>
+    <script src="js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/pdfh5.js" type="text/javascript" charset="utf-8"></script>
     <script>
         
-
+        var pdfh5;
+        $(function () {
+            $("#app").remove()
+            $("#demo").show()
+             pdfh5 = new Pdfh5('#demo', {
+                pdfurl: "Miao.pdf",
+                lazy:true 
+				// ,URIenable:true //开启浏览器地址栏file参数获取
+            });
+        })
 
     </script>
 
