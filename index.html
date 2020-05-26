@@ -22,10 +22,13 @@
             display: none;
 			/* height: 50%; */
         }
+        .media,iframe{
+            height: 100%;
+        }
     </style>
 </head>
 <body>
-    <div id="app">
+    <!-- <div id="app">
         <div class="text-wrapper">
             <div class="text part1">
                 <div>
@@ -55,24 +58,34 @@
             <div class="how-to"><span>正在加载中，请您耐心等待...</span></div>
         </div>
 
-    </div>
+    </div> -->
     <!-- <iframe src='https://www.gjtool.cn/pdfh5/pdf.html?file=https://miaowenwen.github.io/Miao.pdf' width='100%' height='100%' frameborder='1'></iframe> -->
-    <div id="demo"></div>
+    <!-- <div id="demo"></div> -->
+    <a class="media" href="Miao.pdf"></a>
     <script src="js/pdf.js"></script>
     <script src="js/pdf.worker.js"></script>
     <script src="js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="js/pdfh5.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/jquery.media.js" type="text/javascript" charset="utf-8"></script>
+    
     <script>
         
         var pdfh5;
         $(function () {
-            $("#app").remove()
-            $("#demo").show()
-             pdfh5 = new Pdfh5('#demo', {
-                pdfurl: "Miao.pdf",
-                lazy:true 
-				// ,URIenable:true //开启浏览器地址栏file参数获取
-            });
+            // $("#app").remove()
+            // $("#demo").show()
+            //  pdfh5 = new Pdfh5('#demo', {
+            //     pdfurl: "Miao.pdf",
+            //     lazy:true 
+			// 	// ,URIenable:true //开启浏览器地址栏file参数获取
+            // });
+            
+
+
+            $('a.media').media({
+                width:'100%',
+                height:'100vh',
+            })
         })
 
     </script>
